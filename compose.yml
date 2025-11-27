@@ -1,0 +1,17 @@
+services:
+  redis:
+    image: valkey/valkey:8.1.4
+    ports:
+      - "6379:6379"
+  deno-app:
+    image: denoland/deno:2.5.6
+    command: run --inspect=0.0.0.0:9229 --allow-net --allow-env /app/test.ts
+    ports:
+      - "9229:9229"
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+    environment:
+      REDIS_URL: redis://redis:6379
+      WORKERS: "50"

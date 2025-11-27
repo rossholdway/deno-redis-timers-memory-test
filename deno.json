@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "@redis/client": "npm:@redis/client@5.8.3"
+  }
+}
