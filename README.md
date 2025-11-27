@@ -1,4 +1,4 @@
-# Demo if possible memory leak
+# Demo of possible memory leak
 
 Start with `docker compose up`.
 
